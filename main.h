@@ -33,7 +33,8 @@
 #define RHEL_RELEASE_VERSION(a, b) a<<8 & b
 #endif
 
-#if (LINUX_VERSION_CODE < KERNEL_VERSION(5, 8, 0)) || defined(RHEL_RELEASE) && (RHEL_RELEASE_CODE < RHEL_RELEASE_VERSION(8,0))
+# for 5.4 kernel that have defined the function 'fsleep' already [simonchen] [2024-1-26]
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(5, 4, 0)) || defined(RHEL_RELEASE) && (RHEL_RELEASE_CODE < RHEL_RELEASE_VERSION(4,0))
 /* see Documentation/timers/timers-howto.rst for the thresholds */
 static inline void fsleep(unsigned long usecs)
 {
