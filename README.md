@@ -1,6 +1,7 @@
 # Fix compile error 
 1. Remove wow.o
 2. Kernel 5.4 already supported 'fsleep' , so it does remove 'fsleep from main.h
+3. Adding <linux/module.h> to rtw_8821c.c 
    
 # rtw88 📡🐧
 ### A Repo for the Latest Realtek WiFi 5 Codes on Linux
